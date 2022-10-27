@@ -2,6 +2,12 @@
 <html class="no-js" lang="en">
 
 <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Home One || Educat</title>
@@ -79,6 +85,25 @@
 </head>
 
 <body>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">¡Inscripciones Abiertas!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://inedmi.edu.co/wp-content/uploads/2020/09/Tenemos-una-ventaja-5.jpeg">
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                    <div class="text-center">
+                        <a class="btn btn-primary" id="inscripcion" href="#" role="button">Inscríbete aquí</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -518,28 +543,22 @@
             <!--End of Slider Area-->
             <!--About Area Start-->
             <!-- Vertically centered modal -->
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">                            
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="" alt="">
-                        </div>                        
-                    </div>
-                </div>
-            </div>
+            <!-- Modal HTML -->
+
             <div class="about-area">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-md-12">
                             <div class="about-container">
                                 <h3>WHY EDUCAT ?</h3>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some form, by injected humour, or randomised words which
-                                    don't look even slightly believable. If you are going to use a passage of Lorem
-                                    Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+                                <p>There are many variations of passages of Lorem Ipsum available, but the
+                                    majority have
+                                    suffered alteration in some form, by injected humour, or randomised
+                                    words which
+                                    don't look even slightly believable. If you are going to use a passage
+                                    of Lorem
+                                    Ipsum, you need to be sure there isn't anything embarrassing hidden in
+                                    the middle of
                                     text
                                     amr songr balga ami toami valo lasi ciri din akr dali</p>
                                 <a class="button-default" href="#">Learn Now</a>
@@ -574,8 +593,10 @@
                                         <span>By: <span>M S Nawaz</span></span>
                                         <span>Date: <span>20.5.15</span></span>
                                     </div>
-                                    <p>There are many variations of sages of Lorem Ipsum available, but the mrity have
-                                        suffered alteration in some orm, by injected humo ur,There are many but the mri
+                                    <p>There are many variations of sages of Lorem Ipsum available, but the
+                                        mrity have
+                                        suffered alteration in some orm, by injected humo ur,There are many
+                                        but the mri
                                         have suffered alteration in some </p>
                                     <div class="single-item-content">
                                         <div class="single-item-comment-view">
@@ -607,8 +628,10 @@
                                         <span>By: <span>Subas Das</span></span>
                                         <span>Date: <span>20.5.15</span></span>
                                     </div>
-                                    <p>There are many variations of sages of Lorem Ipsum available, but the mrity have
-                                        suffered alteration in some orm, by injected humo ur,There are many but the mri
+                                    <p>There are many variations of sages of Lorem Ipsum available, but the
+                                        mrity have
+                                        suffered alteration in some orm, by injected humo ur,There are many
+                                        but the mri
                                         have suffered alteration in some </p>
                                     <div class="single-item-content">
                                         <div class="single-item-comment-view">
@@ -640,8 +663,10 @@
                                         <span>By: <span>Momin Boss</span></span>
                                         <span>Date: <span>20.5.15</span></span>
                                     </div>
-                                    <p>There are many variations of sages of Lorem Ipsum available, but the mrity have
-                                        suffered alteration in some orm, by injected humo ur,There are many but the mri
+                                    <p>There are many variations of sages of Lorem Ipsum available, but the
+                                        mrity have
+                                        suffered alteration in some orm, by injected humo ur,There are many
+                                        but the mri
                                         have suffered alteration in some </p>
                                     <div class="single-item-content">
                                         <div class="single-item-comment-view">
@@ -738,7 +763,8 @@
                                         <span><i class="zmdi zmdi-eye"></i>59</span>
                                         <span><i class="zmdi zmdi-comments"></i>19</span>
                                     </div>
-                                    <p>There are many variaons of passages of Lorem Ipsuable, amrn in some by injected
+                                    <p>There are many variaons of passages of Lorem Ipsuable, amrn in some
+                                        by injected
                                         humour, </p>
                                     <a href="#" class="button-default">LEARN Now</a>
                                 </div>
@@ -756,7 +782,8 @@
                                         <span><i class="zmdi zmdi-eye"></i>59</span>
                                         <span><i class="zmdi zmdi-comments"></i>19</span>
                                     </div>
-                                    <p>There are many variaons of passages of Lorem Ipsuable, amrn in some by injected
+                                    <p>There are many variaons of passages of Lorem Ipsuable, amrn in some
+                                        by injected
                                         humour, </p>
                                     <a href="#" class="button-default">LEARN Now</a>
                                 </div>
@@ -774,7 +801,8 @@
                                         <span><i class="zmdi zmdi-eye"></i>59</span>
                                         <span><i class="zmdi zmdi-comments"></i>19</span>
                                     </div>
-                                    <p>There are many variaons of passages of Lorem Ipsuable, amrn in some by injected
+                                    <p>There are many variaons of passages of Lorem Ipsuable, amrn in some
+                                        by injected
                                         humour, </p>
                                     <a href="#" class="button-default">LEARN Now</a>
                                 </div>
@@ -792,7 +820,8 @@
                                         <span><i class="zmdi zmdi-eye"></i>59</span>
                                         <span><i class="zmdi zmdi-comments"></i>19</span>
                                     </div>
-                                    <p>There are many variaons of passages of Lorem Ipsuable, amrn in some by injected
+                                    <p>There are many variaons of passages of Lorem Ipsuable, amrn in some
+                                        by injected
                                         humour, </p>
                                     <a href="#" class="button-default">LEARN Now</a>
                                 </div>
@@ -835,7 +864,8 @@
                                         </div>
                                     </div>
                                     <div class="product-buttons">
-                                        <button type="button" class="button-default cart-btn">ADD TO CART</button>
+                                        <button type="button" class="button-default cart-btn">ADD TO
+                                            CART</button>
                                         <button type="button" class="button-default"><i
                                                 class="zmdi zmdi-favorite"></i></button>
                                         <button type="button" class="button-default"><i
@@ -863,7 +893,8 @@
                                         </div>
                                     </div>
                                     <div class="product-buttons">
-                                        <button type="button" class="button-default cart-btn">ADD TO CART</button>
+                                        <button type="button" class="button-default cart-btn">ADD TO
+                                            CART</button>
                                         <button type="button" class="button-default"><i
                                                 class="zmdi zmdi-favorite"></i></button>
                                         <button type="button" class="button-default"><i
@@ -892,7 +923,8 @@
                                         </div>
                                     </div>
                                     <div class="product-buttons">
-                                        <button type="button" class="button-default cart-btn">ADD TO CART</button>
+                                        <button type="button" class="button-default cart-btn">ADD TO
+                                            CART</button>
                                         <button type="button" class="button-default"><i
                                                 class="zmdi zmdi-favorite"></i></button>
                                         <button type="button" class="button-default"><i
@@ -920,7 +952,8 @@
                                         </div>
                                     </div>
                                     <div class="product-buttons">
-                                        <button type="button" class="button-default cart-btn">ADD TO CART</button>
+                                        <button type="button" class="button-default cart-btn">ADD TO
+                                            CART</button>
                                         <button type="button" class="button-default"><i
                                                 class="zmdi zmdi-favorite"></i></button>
                                         <button type="button" class="button-default"><i
@@ -965,38 +998,50 @@
                             <div class="testimonial-text-slider text-center">
                                 <div class="sin-testiText">
                                     <h2>M S Nawaz </h2>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered alteration in some form, by injected humour, or randomised words
+                                    <p>There are many variations of passages of Lorem Ipsum available, but
+                                        the majority
+                                        have suffered alteration in some form, by injected humour, or
+                                        randomised words
                                         which don't look even slightly believable.</p>
                                 </div>
                                 <div class="sin-testiText">
                                     <h2>Chowchilla Madera</h2>
-                                    <p>Nam nec tellus a odio tincidunt This lorem is Photoshop's version of Lorem Ipsum.
-                                        Proin gravida nibh vel velit auctor aliquet. Aenean nisi sollicitudin, lorem
+                                    <p>Nam nec tellus a odio tincidunt This lorem is Photoshop's version of
+                                        Lorem Ipsum.
+                                        Proin gravida nibh vel velit auctor aliquet. Aenean nisi
+                                        sollicitudin, lorem
                                         quis bibendum auctor, nisi elit consequat ipsum gravida.</p>
                                 </div>
                                 <div class="sin-testiText">
                                     <h2>Kattie Luis</h2>
-                                    <p>Nam nec tellus a odio tincidunt This is Photoshop's version of Lorem Ipsum. Proin
-                                        gravida nibh vel velit auctor aliquet. Aenean tincidunt sollicitudin, lorem quis
+                                    <p>Nam nec tellus a odio tincidunt This is Photoshop's version of Lorem
+                                        Ipsum. Proin
+                                        gravida nibh vel velit auctor aliquet. Aenean tincidunt
+                                        sollicitudin, lorem quis
                                         bibendum auctor, nisi elit consequat ipsum Photoshop.</p>
                                 </div>
                                 <div class="sin-testiText">
                                     <h2>M S Nawaz </h2>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered alteration in some form, by injected humour, or randomised words
+                                    <p>There are many variations of passages of Lorem Ipsum available, but
+                                        the majority
+                                        have suffered alteration in some form, by injected humour, or
+                                        randomised words
                                         which don't look even slightly believable.</p>
                                 </div>
                                 <div class="sin-testiText">
                                     <h2>Chowchilla Madera</h2>
-                                    <p>Nam nec tellus a odio tincidunt This is Photoshop's version of Lorem Ipsum. Proin
-                                        gravida nibh vel velit auctor aliquet. Aenean sollicitudin, aliquet lorem quis
+                                    <p>Nam nec tellus a odio tincidunt This is Photoshop's version of Lorem
+                                        Ipsum. Proin
+                                        gravida nibh vel velit auctor aliquet. Aenean sollicitudin, aliquet
+                                        lorem quis
                                         tellus velit bibendum auctor, nisi elit consequat ipsum</p>
                                 </div>
                                 <div class="sin-testiText">
                                     <h2>Kattie Luis</h2>
-                                    <p>Nam nec tellus a odio tincidunt This is Photoshop's version of Lorem Ipsum. Proin
-                                        gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem gravida
+                                    <p>Nam nec tellus a odio tincidunt This is Photoshop's version of Lorem
+                                        Ipsum. Proin
+                                        gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
+                                        gravida
                                         tincidunt quis bibendum auctor, nisi elit consequat ipsum</p>
                                 </div>
                             </div>
@@ -1033,7 +1078,8 @@
                                         <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
                                         <span><i class="zmdi zmdi-pin"></i>Dhaka Bangladesh</span>
                                     </div>
-                                    <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected
+                                    <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby
+                                        injected
                                         humour, amr sarata din megla....</p>
                                     <a class="button-default" href="#">LEARN Now</a>
                                 </div>
@@ -1053,7 +1099,8 @@
                                         <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
                                         <span><i class="zmdi zmdi-pin"></i>Jessore Bangladesh</span>
                                     </div>
-                                    <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected
+                                    <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby
+                                        injected
                                         humour, amr sarata din megla....</p>
                                     <a class="button-default" href="#">LEARN Now</a>
                                 </div>
@@ -1073,7 +1120,8 @@
                                         <span><i class="zmdi zmdi-time"></i>4.00 pm - 8.00 pm</span>
                                         <span><i class="zmdi zmdi-pin"></i>Dhaka. Bangladesh</span>
                                     </div>
-                                    <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby injected
+                                    <p>There are many variaons of passa of Lorem Ipsuable, amrn in sofby
+                                        injected
                                         humour, amr sarata din megla....</p>
                                     <a class="button-default" href="#">LEARN Now</a>
                                 </div>
@@ -1104,7 +1152,8 @@
                                 </form>
                                 <!-- mailchimp-alerts Start -->
                                 <div class="mailchimp-alerts text-centre fix pull-right">
-                                    <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                    <div class="mailchimp-submitting"></div>
+                                    <!-- mailchimp-submitting end -->
                                     <div class="mailchimp-success"></div><!-- mailchimp-success end -->
                                     <div class="mailchimp-error"></div><!-- mailchimp-error end -->
                                 </div>
@@ -1124,7 +1173,8 @@
                                 <div class="footer-logo">
                                     <a href="index.html"><img src="img/logo/footer.png" alt=""></a>
                                 </div>
-                                <p>There are many variations of passg of Lorem Ipsum available, but thmajority have
+                                <p>There are many variations of passg of Lorem Ipsum available, but
+                                    thmajority have
                                     suffered altem, </p>
                                 <div class="social-icons">
                                     <a href="#"><i class="zmdi zmdi-facebook"></i></a>
@@ -1296,3 +1346,8 @@
 </body>
 
 </html>
+<script>
+    $(document).ready(function () {
+        $('#myModal').modal('toggle')
+    });
+</script>
