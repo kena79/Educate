@@ -18,13 +18,24 @@ class crud
 		$no_documento = $res[2];
 		$activo = $res[3];
 
-		if ($no_documento) {
-			if (($no_documento > 0) && ($activo == 1)) {
-				return ['op' => 2, 'no_documento' => $datos[1]];
-			} elseif (($no_documento > 0) && ($activo == 0)) {
-				return ['op' => 3];
+		if (($datos[0] == $tipo_doc) && ($datos[1] == $no_documento) && ($activo == 0)) {
+
+			$resInfo =  mysqli_fetch_row(mysqli_query($conexion, "SELECT id
+			FROM informacionAspirantes 
+			WHERE tipoDocumento = '$tipo_doc' AND noDocumento = '$no_documento' AND estado = 2"));
+			$idExiste = $resInfo[0];
+			if ($idExiste > 0) {
+				return ['op' => 3, 'id' => base64_encode($idExiste)]; //Quedo con existo falta descargar el pdff
+			} else {
+				return ['op' => 1]; //Quedo con exito
 			}
+
+		} elseif (($datos[0] == $tipo_doc) && ($datos[1] == $no_documento) && ($activo == 1)) {
+
+			return ['op' => 2, 'no_documento' => base64_encode($datos[1])]; //quedó en proceso
+
 		} else {
+
 			mysqli_query($conexion, "INSERT INTO validacionAspirantes(tipo_doc, no_documento) 
 			VALUES ('$datos[0]','$datos[1]')");
 
@@ -33,10 +44,50 @@ class crud
 			WHERE tipo_doc = '$datos[0]' AND no_documento = '$datos[1]' AND activo = 1"));
 			$idMax = $success[0];
 			if ($idMax) {
-				return ['op' => 4, 'no_documento' => $datos[1]]; //no existe
+				return ['op' => 4, 'no_documento' => base64_encode($datos[1])]; //no existe
 			} else {
 				return ['op' => 5, 'msj' => 'Falló']; //no existe
 			}
+		}
+	}
+
+	public function agregarAspirantes($datos)
+	{
+		$obj = new conectar();
+		$conexion = $obj->conexion();
+		$tildes = $conexion->query("SET NAMES 'utf8'");
+
+		mysqli_query($conexion, "INSERT INTO informacionAspirantes (nombres, primerApellido, segundoApellido, 
+		tipoDocumento, noDocumento, gradoInscripcion, anio, sexo, lugarNacimiento, fechaNacimiento, lugarExpedicion, 
+		fechaExpedicion, telefono, ciudad, direccion, correoElectronico, estado) 
+		VALUES ('$datos[1]','$datos[2]','$datos[3]','$datos[6]','$datos[7]','$datos[4]','$datos[0]','$datos[5]','$datos[8]',
+		'$datos[9]','$datos[10]','$datos[11]','$datos[12]','$datos[13]','$datos[14]','$datos[15]',1)");
+
+		$successRegister =  mysqli_fetch_row(mysqli_query($conexion, "SELECT max(id) As id 
+			FROM informacionAspirantes 
+			WHERE tipoDocumento = '$datos[6]' AND noDocumento = '$datos[7]' AND estado = 1"));
+		$idAspirante = $successRegister[0];
+		if ($idAspirante) {
+
+			mysqli_query($conexion, "INSERT INTO informacionParentesco (idAspirante, parentesco, nombres, primerApellido, segundoApellido, 
+			tipoDocumento, noDocumento, lugarNacimiento, fechaNacimiento, lugarExpedicion, fechaExpedicion, telefono, ciudad, direccion, 
+			correoElectronico, nivelAcademico, profesion, tipoTrabajo, nombreLugarTrabajo, cargo) 
+			VALUES ($idAspirante, '$datos[16]','$datos[17]','$datos[18]','$datos[19]','$datos[20]','$datos[21]','$datos[22]','$datos[23]','$datos[24]'
+			,'$datos[25]','$datos[26]','$datos[27]','$datos[28]','$datos[29]','$datos[30]','$datos[31]','$datos[32]','$datos[33]','$datos[34]')");
+
+			mysqli_query($conexion, "INSERT INTO informacionParentesco (idAspirante, parentesco, nombres, primerApellido, segundoApellido, 
+			tipoDocumento, noDocumento, lugarNacimiento, fechaNacimiento, lugarExpedicion, fechaExpedicion, telefono, ciudad, direccion, 
+			correoElectronico, nivelAcademico, profesion, tipoTrabajo, nombreLugarTrabajo, cargo) 
+			VALUES ($idAspirante, '$datos[35]','$datos[36]','$datos[37]','$datos[38]','$datos[39]','$datos[40]','$datos[41]','$datos[42]','$datos[43]','$datos[44]'
+			,'$datos[45]','$datos[46]','$datos[47]','$datos[48]','$datos[49]','$datos[50]','$datos[51]','$datos[52]','$datos[53]')");
+
+			mysqli_query($conexion, "INSERT INTO informacionAdicional (idAspirante, preguntaUno, preguntaDos, preguntaTres) 
+			VALUES ($idAspirante, '$datos[54]','$datos[55]','$datos[56]')");
+
+			mysqli_query($conexion, "UPDATE informacionAspirantes SET estado = 2 WHERE id = $idAspirante AND estado = 1;");
+			mysqli_query($conexion, "UPDATE validacionAspirantes SET activo = 0 WHERE tipo_doc = $datos[6] AND no_documento = $datos[7] AND activo = 1;");
+
+			return ['op' => 1, 'msj' => 'Se ha registrado correctamente su Pre-Inscripción!', 'id' => base64_encode($idAspirante)];
 		}
 	}
 
