@@ -37,7 +37,7 @@
                                             <li><a href="index.php">Inicio</a></li>
                                             <li><a href="about.html">Nosotros</a></li>
                                             <li><a href="buscar_inscripcion.php">Admisión</a></li>
-                                            <li><a href="contact.html">Contacto</a></li>
+                                            <li><a href="contacto.php">Contacto</a></li>
                                         </ul>
                                     </nav>
                                 </div>
