@@ -51,3 +51,7 @@
     </div>
 </footer>
 <!--End of Footer Area-->
+</div>
+<!--End of Bg White-->
+</div>
+<!--End of Main Wrapper-->
