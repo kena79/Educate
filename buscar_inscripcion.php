@@ -30,14 +30,22 @@
                     <form id="frmBuscarAspirante" action="#" method="post">
                         <div class="row">
                             <div class="col-md-4">
-                                Tipo Doc.
+                                Tipo Documento.
                                 <div class="select large">
                                     <select name="txtTipoDoc" id="txtTipoDoc" required>
                                         <option value="">Seleccione...</option>
-                                        <option>Cedula de ciudadanía</option>
-                                        <option>Tarjeta de identidad</option>
-                                        <option>Registro civil</option>
-                                        <option>Pasaporte</option>
+                                        <option value="1">Tarjeta de Identidad</option>
+                                        <option value="2">Registro Civil</option>
+                                        <option value="3">Cédula de Ciudadanía</option>
+                                        <option value="4">Cédula de Extranjería</option>
+                                        <option value="5">Pasaporte</option>
+                                        <option value="6">NUIP</option>
+                                        <option value="7">Número de Secretaría</option>
+                                        <option value="8">Permiso Especial de Permanencia</option>
+                                        <option value="9">Permiso Protección Temporal</option>
+                                        <option value="10">Acta</option>
+                                        <option value="11">NIT</option>
+                                        <option value="12">VISA</option>
                                     </select>
                                 </div>
                             </div>
@@ -62,7 +70,7 @@
 
     <!-- Script js -->
     <?php include("script.php") ?>
-    
+
 </body>
 
 </html>
@@ -84,12 +92,23 @@
                         location.href = 'pre-inscripcion.php?no_documento=' + no_documento;
                     } else if (jsonData.op == "2") {
                         location.href = 'pre-inscripcion.php?no_documento=' + no_documento;
+                    } else if (jsonData.op == "3") {
+                        var id = jsonData.id
+                        location.href = 'resultado_inscripcion.php?id=' + id;
+                    } else if (jsonData.op == "1") {
+                        Swal.fire(
+                            'Advertencia!',
+                            'Lo sentimos, ya tiene una pre-inscripción finalizada, espere respuesta a su correo!',
+                            'warning'
+                        );
+                        document.getElementById('frmBuscarAspirante').reset();
                     } else {
                         Swal.fire(
                             'Error!',
                             'Lo sentimos, ya tiene una pre-inscripción en proceso, espere respuesta a su correo!',
                             'error'
                         );
+                        document.getElementById('frmBuscarAspirante').reset();
                     }
                 }
             });
